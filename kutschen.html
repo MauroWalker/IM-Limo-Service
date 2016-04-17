@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahrzeuge</title>
+<title>Bock auf Limo</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/customtheme.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAE-xBl-Wl-jZGSbwYQPA1bW2cTalKZ_pg" type="text/javascript"></script>
 <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
@@ -21,7 +24,6 @@
 </head>
 
 
-
 <body style="padding-top: 70px">
 <!-- Navbar anfang -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -29,17 +31,25 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="index.html"><i class="fa fa-lemon-o"></i> Bock auf Limo</a>
-            
-      </div> 
+      <a class="navbar-brand" href="index.html"><i class="fa fa-lemon-o"></i> Bock auf Limo</a> 
       
+      <div class="hidden-md hidden-sm hidden-lg hidden-xl pull-right">
+	      
+
+	     <a class="navbar-brand" href="angebot.html"><i class="fa fa-car" ></i></a>
+	     <a class="navbar-brand" href="bookings.html"><i class="fa fa-map-signs" ></i></a>
+	     <a class="navbar-brand" href="kontakt.html"><i class="fa fa-comments"></i></a>
+	     <a class="navbar-brand" href="about.html"><i class="fa fa-user"></i></a>   
+      </div>       
+     	 </div> 
+     	     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="topFixedNavbar1">
       <ul class="nav navbar-nav">
       <li>
         <li class=""><a href="angebot.html">Angebot<span class="sr-only">(current)</span></a></li>
         <li><a href="bookings.html">Buchen</a></li>
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Fahrzeuge<span class="caret"></span></a>
+        <li class="dropdown hidden-sm"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Fahrzeuge<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="stretch.html">Stretch-Limonusinen</a></li>
             <li class="divider"></li>
@@ -58,18 +68,6 @@
         <li><a href="dokumentation.html">Dokumentation</a></li>
 
             <li><form class="navbar-form hidden-xs" role="search">
-        <div class="form-group">
-          <input type="text" class="form-search" placeholder="suchen...">
-        </div>
-        <button type="submit" class="btn btn-default nav-search"><i class="fa fa-search"></i></button>
-      </form></li>
-      <li>
-            <form class="navbar-form hidden-md hidden-sm hidden-lg" role="search">
-          <input type="text" class="form-search" placeholder="suchen...">
-
-        <button type="submit" class="btn btn-default nav-search"><i class="fa fa-search"></i></button>
-      </form>
-      </li>
 
 
       </ul>
@@ -79,12 +77,16 @@
   <!-- /.container-fluid -->
 </nav>
 <!-- Navbar ende -->
-
-
-
-<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-<script src="js/bootstrap.js" type="text/javascript"></script>
 </body>
+
+
+
+
+
+
+
+
+
 
     <footer class="footer">
       <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker
@@ -92,4 +94,3 @@
       </div>
 </footer>
 </html>
-
