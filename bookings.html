@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -31,6 +31,23 @@
       #erneut {
 	      display: none;
       }
+      #weiter{
+	      display: none;
+      }
+      #formbuch {
+	      display: none;
+      }
+      #formbuch1 {
+	      display: none;
+      }
+      #Offerte1 {
+	      display: none;
+      }
+      #anfragewarten {
+	      display: none;
+      }
+      
+      
     </style>
 
 </head>
@@ -93,26 +110,30 @@
 <div class="container">
 
 
-<div class="col-md-5">
+<div id="formkalk"class="col-md-5">
 
 <h2>Buchungskalkulation:</h2>
 
  <form>
 <div class="input-group">
-   <span class="input-group-addon" id="basic-addon2">Abholung:</span>
-  <input type="text" id="source" class="form-control" placeholder="Adresse, Ort" aria-describedby="basic-addon2">
+   <span class="input-group-addon">Abholung:</span>
+  <input type="text" id="source" class="form-control" placeholder="Strasse, Nr, Ort" aria-describedby="basic-addon2" required>
  </div>
  
  <br>
  
  <div class="input-group">
-   <span class="input-group-addon" id="basic-addon2">Reiseziel:</span>
-  <input type="text" id="destination" class="form-control" placeholder="Adresse, Ort" aria-describedby="basic-addon2">
- </div>
+   <span class="input-group-addon">Reiseziel:</span>
+  <input type="text" id="destination" class="form-control" placeholder="Strasse, Nr, Ort" aria-describedby="basic-addon2" required>
+ </div><br>
+ 
+ 
+<p id="anzahlpersonen">Anzahl Personen: 1</p>
+ <input type="range" id="anzpersonen" min="1" max="30" value="1">
  
 
 
-<p> </p>
+<br>
   <label>
     <input type="checkbox" name="CheckboxGroup1" value="kontrollkästchen" id="einweg">
     Ohne Rückfahrt</label>
@@ -124,24 +145,129 @@
   <label>
       <input type="checkbox" name="CheckboxGroup1_" value="kontrollkästchen" id="versicherung">
     Zusatzversicherung</label>
-  <br>
+  <br><br>
 
-<p id="Offerte"></p>
+
 
 <input type="button" value="Berechnen" id="berechnen">
 <input type="button" value="Neu Berechnen" id="erneut">
+<input type="button" value="weiter" id="weiter">
+<br> <br>
+<p id="anfragewarten"> Bitte haben Sie ein wenig Geduld, Ihre Offerte erscheint in wenigen Sekunden. <p>
 
 
 
 </form>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+<div id="formbuch" class="col-md-5">
+<form id="buchungsanfrage">
+
+<h2> Buchungsanfrage: </h2>
+	
+Bitte geben Sie uns Ihr gewünschtes Reisedatum an:
+<br><br>
+
+<div class="input-group">
+   <span class="input-group-addon datumform">Datum Hinfahrt:</span>
+  <input type="datetime" id="hinfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2">
+ </div>
+ <br>
+ <div class="input-group">
+   <span class="input-group-addon datumform">Datum Rückfahrt:</span>
+  <input type="datetime" id="rückfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2">
+ </div>
+ <br>
+
+
+Bitte geben Sie Ihre Kontaktangaben.
+<br><br>
+
+<div class="input-group">
+	<span class="input-group-addon">Anrede:</span>
+ <span class="anrede">  <input type="radio"  name="anrede" value="Herr"> Herr </span>
+ <span class="anrede">  <input type="radio"  name="anrede" value="Frau"> Frau </span>
+ <span class="anrede">  <input type="radio"  name="anrede" value="Firma"> Firma </span>
+ </div>
+ <br>
+<div class="input-group">
+   <span class="input-group-addon">Vorname:</span>
+  <input type="text" id="vorname" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
+ </div>
+ <br>
+ <div class="input-group">
+   <span class="input-group-addon">Name:</span>
+  <input type="text" id="nachname" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
+ </div>
+ <br>
+<div class="input-group">
+   <span class="input-group-addon">Adresse:</span>
+  <input type="text" id="adresse" class="form-control" placeholder="Adresse" aria-describedby="basic-addon2">
+ </div>
+ <br>
+<div class="input-group">
+   <span class="input-group-addon">PLZ:</span>
+  <input type="text" id="plz" class="form-control" placeholder="PLZ" aria-describedby="basic-addon2">
+ </div>
+<br> 
+<div class="input-group">
+   <span class="input-group-addon">Ort:</span>
+  <input type="text" id="ort" class="form-control" placeholder="Ort" aria-describedby="basic-addon2">
+ </div>
+ <br> 
+<div class="input-group">
+   <span class="input-group-addon">E-Mail:</span>
+  <input type="email" id="mail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
+ </div>
+ <br> 
+<div class="input-group">
+   <span class="input-group-addon">Phone:</span>
+  <input type="tel" id="phone" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
+ </div>
+
+<br>
+
+
+ </form>
+ 
+ <input type="button" value="weiter" id="weiter1">
+</div>
+
+
+<div id="formbuch1"class="col-md-5">
+<h2> Checkout: </h2>
+
+Bitte Bestätigen Sie folgende Angaben: <br>
+
+<p id="checkout"> </p>
+
+<p id="Offerte1"></p>
+<br>
+<input type="button" value="Bestätigen und Anfrage absenden" id="anfrage">
+<br><br>
+<p> <b> Mit dem Klicken auf 'Bestätigen und Anfrage absenden' bestätigen Sie, mit unseren AGB's einverstanden zu sein. </b> </p>
+
+</div>
+
+
+
+
 <div class="col-md-1">
 </div>
 
 
 <div class="col-md-6">
-<h2>Buchungskonditionen:</h2>
+<h3>Buchungskonditionen:</h3>
 
 <ul>
 
@@ -153,7 +279,7 @@
 
 <li>Wir empfehlen unsere Zusatzversicherung: Kosten: Fr. 100.-<br>Ohne Zusatzversicherung haften Sie für allfällige Reperaturen.</br> </li>
 
-<li>Pro Buchung berechnen wir zudem Fr. 90.- als Pauschale. </li>
+<li>Pro Buchung verbuchen wir zudem pro Person Fr. 90.- als Pauschale. </li>
 
 </ul>
 
@@ -161,12 +287,28 @@
 
 <div id="map"></div>
 
+<p id="Offerte"></p>
+
 </div>
 
+
+
+
+
+
+</div>
 <script>
 var origin = 'yes';
 var zusatzkosten = 90;
-var zusatzkostentext = ["Pauschalkosten (90.-)"];
+var zusatztext = [];
+var fahrkosten = 0
+var offerte = "Test"
+var checkout = "Test"
+var postfürbock = ["Anbei erhalten Sie die Angaben aus unserem Formular übermittelt:"]
+var personen = 0
+var personenkosten = "0"
+
+
 
 
 
@@ -189,9 +331,65 @@ var zusatzkostentext = ["Pauschalkosten (90.-)"];
 // Einbindung der Map von Google - wird nicht angezeigt, da display: none;
 
 
+$('#anzpersonen').on("change mousemove", function() {
+    $(this).next().html($(this).val());
+    var personen = document.getElementById("anzpersonen").value
+    document.getElementById("anzahlpersonen").innerHTML = "Anzahl Personen: " + personen;
+     });
+    
 
 
-// Berechnung der Distanz von Punkt A (source) nach Punkt B (destination).
+
+
+
+
+
+$('#anfrage').click(function() {
+	console.log(postfürbock)
+
+
+
+     });
+
+ 
+
+$('#weiter1').click(function() {
+	$("#formbuch").hide()
+	$("#formbuch1").show()
+	$("#Offerte").hide()
+	$("#Offerte1").show()
+	var vorname =$("#vorname").val();
+	var nachname = $("#nachname").val();
+	var adresse = $("#adresse").val();
+	var plz = $("#plz").val();
+	var ort = $("#ort").val();
+	var mail = $("#mail").val();
+	var phone = $("#phone").val();
+	var hinfahrt = $("#hinfahrt").val();
+	var rückfahrt = $("#rückfahrt").val();
+	var anrede = $('input[name=anrede]:checked', '#buchungsanfrage').val()
+	postfürbock.push("Datum Hinfahrt: " + hinfahrt, "Datum Rückfahrt: " + rückfahrt, "Anrede: " +  anrede, "Vorname: " + vorname, "Nachname: " + nachname, "Adresse: " + adresse, "PLZ: "  + plz + "Ort: " + ort, "E-Mail: " + mail, "Phone: " + phone);
+	
+
+	$("#checkout").append("<br>" + "Datum Hinfahrt: " + hinfahrt + "<br>" +
+						"Datum Rückfahrt: " + rückfahrt + "<br>" + 
+						"Vor- / Nachname: " + anrede + " " + vorname + " " + nachname + " <br> " +
+						"Adresse: " + adresse + " <br> " + 
+						"PLZ/Ort: " + plz + " / " + ort  + " <br> " +
+						"E-Mail: " + mail + " <br> " +
+						"Phone: " + phone );
+     });
+
+
+
+
+$('#weiter').click(function() {
+	$("#erneut").hide()
+	$("#formkalk").hide()
+	$("#formbuch").show()
+
+     });
+
 
 $('#berechnen').click(function() {
   origin = document.getElementById('source').value; //Get the source string
@@ -208,6 +406,9 @@ $('#berechnen').click(function() {
     }, calcDistance); // here calcDistance is the call back function
      $("#berechnen").hide();
      $("#erneut").show();
+     $("#weiter").show();
+     $("#anfragewarten").show();
+     
      });
      
 $('#erneut').click(function() {
@@ -238,11 +439,18 @@ function calcDistance(response, status) {
     var destinations = response.destinationAddresses;
 	
     for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
+      var results = response.rows[i].elements; 
       for (var j = 0; j < results.length; j++) {
 		  distanz = parseFloat(results[j].distance.text)
 		var zusatzkosten = 90;
-		var zusatzkostentext = ["Pauschalkosten (90.-)"];
+		var zusatztext = [];
+
+		var personen = $("#anzpersonen").val();
+		var personenkosten = "Personen: " + personen + " (" + (personen*90) + "CHF)";
+		zusatztext.push(personenkosten);
+		
+		
+
 		  
 
 	if (distanz < 100) {
@@ -256,29 +464,43 @@ function calcDistance(response, status) {
 	
 	if ($('#luxuspaket').is(':checked')) {
 		zusatzkosten = zusatzkosten + 120;
-		zusatzkostentext.push(" Luxuspaket (120.-)");
+		zusatztext.push(" Luxuspaket (120.-)");
 	}
 		if ($('#versicherung').is(':checked')) {
 		zusatzkosten = zusatzkosten + 100;
-		zusatzkostentext.push(" Versicherung (100.-)");
+		zusatztext.push(" Versicherung (100.-)");
 	}
- 
 	
-	function round(number, decimals){
-	//Rundet eine Zahl auf eine bestimmte Nachkommastelle
-	return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
-}
-zusatzkostentext.toString();
+		if (!$('#versicherung, #luxuspaket').is(':checked')) {
+		zusatztext.push(" keine Zusätzlichen Leistungen");
+	}
+	zusatzkosten = zusatzkosten+(personen*90);
+	
+
+
+
+zusatztext.toString();
 	
 		
 	var element = document.getElementById("Offerte");
     element.innerHTML = 
 "<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
 
-"Weitere Kosten: " + "<br>" + zusatzkostentext + "<br>"
+"Details: " + "<br>" + zusatztext + "<br>"
     
 + "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
 + "<b>Alle Angaben ohne Gewähr!</b>";
+
+	var element = document.getElementById("Offerte1");
+    element.innerHTML = 
+"<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
+
+"Details : " + "<br>" + zusatztext + "<br>"
+    
++ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
++ "<b>Alle Angaben ohne Gewähr!</b>";
+
+	postfürbock.push("Abholung von: " + origin, "Reiseziel: " + destination, "Distanz: " + distanz + "Km", "Fahrtkosten: " + fahrkosten + "CHF", "Weitere Kosten : " + zusatztext, "Gesamtkosten: " + (round(fahrkosten, 0) +zusatzkosten)) + " CHF";
 	
 		
 		
@@ -290,7 +512,10 @@ zusatzkostentext.toString();
   }
 }
 
-
+	function round(number, decimals){
+	//Rundet eine Zahl auf eine bestimmte Nachkommastelle
+	return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+}
 
 
 
@@ -304,7 +529,7 @@ zusatzkostentext.toString();
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
 async defer></script>
 
-</div>
+
 
 
 </body>
