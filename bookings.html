@@ -22,34 +22,6 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-    <style>
-      #map {
-        width: 400px;
-        height: 400px;
-      }
-      
-      #erneut {
-	      display: none;
-      }
-      #weiter{
-	      display: none;
-      }
-      #formbuch {
-	      display: none;
-      }
-      #formbuch1 {
-	      display: none;
-      }
-      #Offerte1 {
-	      display: none;
-      }
-      #anfragewarten {
-	      display: none;
-      }
-      
-      
-    </style>
-
 </head>
 
 
@@ -153,7 +125,9 @@
 <input type="button" value="Neu Berechnen" id="erneut">
 <input type="button" value="weiter" id="weiter">
 <br> <br>
+ <p id="alleseingeben"> Bitte füllen Sie alle erforderlichen Felder aus. <p>
 <p id="anfragewarten"> Bitte haben Sie ein wenig Geduld, Ihre Offerte erscheint in wenigen Sekunden. <p>
+
 
 
 
@@ -180,12 +154,12 @@ Bitte geben Sie uns Ihr gewünschtes Reisedatum an:
 
 <div class="input-group">
    <span class="input-group-addon datumform">Datum Hinfahrt:</span>
-  <input type="datetime" id="hinfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2">
+  <input type="datetime" id="hinfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2" required>
  </div>
  <br>
  <div class="input-group">
    <span class="input-group-addon datumform">Datum Rückfahrt:</span>
-  <input type="datetime" id="rückfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2">
+  <input type="datetime" id="rückfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2" required>
  </div>
  <br>
 
@@ -241,6 +215,8 @@ Bitte geben Sie Ihre Kontaktangaben.
  </form>
  
  <input type="button" value="weiter" id="weiter1">
+ <br><br>
+ <p id="alleseingeben1"> Bitte füllen Sie alle erforderlichen Felder aus. <p>
 </div>
 
 
@@ -354,10 +330,69 @@ $('#anfrage').click(function() {
  
 
 $('#weiter1').click(function() {
+		if($('#hinfahrt').val() == ''){
+		$("#hinfahrt").addClass("formnotok");
+		$("#alleseingeben1").show()
+		 } else {
+		$("#hinfahrt").removeClass("formnotok");
+			}
+   	if($('#rückfahrt').val() == ''){
+    $("#rückfahrt").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#rückfahrt").removeClass("formnotok");
+			}
+   	if($('#vorname').val() == ''){
+    $("#vorname").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#vorname").removeClass("formnotok"); 
+			}
+   	if($('#nachname').val() == ''){
+    $("#nachname").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#nachname").removeClass("formnotok");
+			}
+   	if($('#adresse').val() == ''){
+    $("#adresse").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#adresse").removeClass("formnotok"); 
+			}
+   	if($('#plz').val() == ''){
+    $("#plz").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#plz").removeClass("formnotok"); 
+			}
+   	if($('#ort').val() == ''){
+    $("#ort").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#ort").removeClass("formnotok");
+			}
+   	if($('#mail').val() == ''){
+    $("#mail").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$("#mail").removeClass("formnotok");
+			}
+   	if($('#phone').val() == ''){
+    $("#phone").addClass("formnotok");
+    $("#alleseingeben1").show()
+   	} else {
+		$('#phone').removeClass("formnotok");
+			}
+	if($('#hinfahrt, #rückfährt, #vorname, #nachname, #adresse, #plz, #ort, #mail, #phone').hasClass("formnotok")){
+		
+		}
+	else {
 	$("#formbuch").hide()
 	$("#formbuch1").show()
 	$("#Offerte").hide()
 	$("#Offerte1").show()
+	$("#alleseingeben1").hide()
 	var vorname =$("#vorname").val();
 	var nachname = $("#nachname").val();
 	var adresse = $("#adresse").val();
@@ -378,6 +413,8 @@ $('#weiter1').click(function() {
 						"PLZ/Ort: " + plz + " / " + ort  + " <br> " +
 						"E-Mail: " + mail + " <br> " +
 						"Phone: " + phone );
+	}
+	
      });
 
 
@@ -392,6 +429,17 @@ $('#weiter').click(function() {
 
 
 $('#berechnen').click(function() {
+	if($('#source').val() == ''){
+    $("#source").css("border", "1px solid red");
+    $("#alleseingeben").show()
+   }
+   	if($('#destination').val() == ''){
+	$("#destination").css("border", "1px solid red");
+	$("#alleseingeben").show()
+   }
+   else {
+  $("#destination").css("border", "");
+  $("#source").css("border", "");
   origin = document.getElementById('source').value; //Get the source string
   destination = document.getElementById('destination').value; //Get the destination string
   var service = new google.maps.DistanceMatrixService(); //initialize the distance service
@@ -408,7 +456,8 @@ $('#berechnen').click(function() {
      $("#erneut").show();
      $("#weiter").show();
      $("#anfragewarten").show();
-     
+     $("#alleseingeben").hide()
+     }
      });
      
 $('#erneut').click(function() {

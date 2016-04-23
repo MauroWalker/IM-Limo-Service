@@ -66,6 +66,43 @@ h1,h2,h3,h4,h5 {
 .navbar-default .navbar-brand {
     color: #0891E8;
 }
+#map {
+        width: 400px;
+        height: 400px;
+      }
+      
+      #erneut {
+	      display: none;
+      }
+      #weiter{
+	      display: none;
+      }
+      #formbuch {
+	      display: none;
+      }
+      #formbuch1 {
+	      display: none;
+      }
+      #Offerte1 {
+	      display: none;
+      }
+      #anfragewarten {
+	      display: none;
+      }
+.formnotok {
+	border: 1px solid red;
+}
+#alleseingeben {
+	color: red;
+	font-weight: bold;
+	display: none;
+}
+#alleseingeben1 {
+	color: red;
+	font-weight: bold;
+	display: none;
+}
+
 
 /* Range Slider gemacht mit: http://www.cssportal.com/style-input-range/*/
 	
