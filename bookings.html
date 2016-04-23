@@ -1,0 +1,542 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bock auf Limo</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/customtheme.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAE-xBl-Wl-jZGSbwYQPA1bW2cTalKZ_pg" type="text/javascript"></script>
+<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <style>
+      #map {
+        width: 400px;
+        height: 400px;
+      }
+      
+      #erneut {
+	      display: none;
+      }
+      #weiter{
+	      display: none;
+      }
+      #formbuch {
+	      display: none;
+      }
+      #formbuch1 {
+	      display: none;
+      }
+      #Offerte1 {
+	      display: none;
+      }
+      #anfragewarten {
+	      display: none;
+      }
+      
+      
+    </style>
+
+</head>
+
+
+
+<body style="padding-top: 70px">
+<!-- Navbar anfang -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="index.html"><i class="fa fa-lemon-o"></i> Bock auf Limo</a> 
+      
+      <div class="hidden-md hidden-sm hidden-lg hidden-xl pull-right">
+	      
+
+	     <a class="navbar-brand" href="angebot.html"><i class="fa fa-car" ></i></a>
+	     <a class="navbar-brand" href="bookings.html"><i class="fa fa-map-signs" ></i></a>
+	     <a class="navbar-brand" href="kontakt.html"><i class="fa fa-comments"></i></a>
+	     <a class="navbar-brand" href="about.html"><i class="fa fa-user"></i></a>   
+      </div>       
+     	 </div> 
+     	     
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="topFixedNavbar1">
+      <ul class="nav navbar-nav">
+      <li>
+        <li class=""><a href="angebot.html">Angebot<span class="sr-only">(current)</span></a></li>
+        <li><a href="bookings.html">Buchen</a></li>
+        <li class="dropdown hidden-sm"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Fahrzeuge<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="stretch.html">Stretch-Limonusinen</a></li>
+            <li class="divider"></li>
+            <li><a href="business.html">Business-Limousinen</a></li>
+            <li class="divider"></li>
+            <li><a href="specials.html">Specials</a></li>
+            <li class="divider"></li>
+            <li><a href="kutschen.html">Kutschen</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+              <li><a href="about.html">Über Uns</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="dokumentation.html">Dokumentation</a></li>
+
+            <li><form class="navbar-form hidden-xs" role="search">
+
+
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<!-- Navbar ende -->
+<div class="container">
+
+
+<div id="formkalk"class="col-md-5">
+
+<h2>Buchungskalkulation:</h2>
+
+ <form>
+<div class="input-group">
+   <span class="input-group-addon">Abholung:</span>
+  <input type="text" id="source" class="form-control" placeholder="Strasse, Nr, Ort" aria-describedby="basic-addon2" required>
+ </div>
+ 
+ <br>
+ 
+ <div class="input-group">
+   <span class="input-group-addon">Reiseziel:</span>
+  <input type="text" id="destination" class="form-control" placeholder="Strasse, Nr, Ort" aria-describedby="basic-addon2" required>
+ </div><br>
+ 
+ 
+<p id="anzahlpersonen">Anzahl Personen: 1</p>
+ <input type="range" id="anzpersonen" min="1" max="30" value="1">
+ 
+
+
+<br>
+  <label>
+    <input type="checkbox" name="CheckboxGroup1" value="kontrollkästchen" id="einweg">
+    Ohne Rückfahrt</label>
+  <br>
+  <label>
+    <input type="checkbox" name="CheckboxGroup1_" value="kontrollkästchen" id="luxuspaket">
+    Luxuspaket</label>
+  <br>
+  <label>
+      <input type="checkbox" name="CheckboxGroup1_" value="kontrollkästchen" id="versicherung">
+    Zusatzversicherung</label>
+  <br><br>
+
+
+
+<input type="button" value="Berechnen" id="berechnen">
+<input type="button" value="Neu Berechnen" id="erneut">
+<input type="button" value="weiter" id="weiter">
+<br> <br>
+<p id="anfragewarten"> Bitte haben Sie ein wenig Geduld, Ihre Offerte erscheint in wenigen Sekunden. <p>
+
+
+
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="formbuch" class="col-md-5">
+<form id="buchungsanfrage">
+
+<h2> Buchungsanfrage: </h2>
+	
+Bitte geben Sie uns Ihr gewünschtes Reisedatum an:
+<br><br>
+
+<div class="input-group">
+   <span class="input-group-addon datumform">Datum Hinfahrt:</span>
+  <input type="datetime" id="hinfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2">
+ </div>
+ <br>
+ <div class="input-group">
+   <span class="input-group-addon datumform">Datum Rückfahrt:</span>
+  <input type="datetime" id="rückfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2">
+ </div>
+ <br>
+
+
+Bitte geben Sie Ihre Kontaktangaben.
+<br><br>
+
+<div class="input-group">
+	<span class="input-group-addon">Anrede:</span>
+ <span class="anrede">  <input type="radio"  name="anrede" value="Herr"> Herr </span>
+ <span class="anrede">  <input type="radio"  name="anrede" value="Frau"> Frau </span>
+ <span class="anrede">  <input type="radio"  name="anrede" value="Firma"> Firma </span>
+ </div>
+ <br>
+<div class="input-group">
+   <span class="input-group-addon">Vorname:</span>
+  <input type="text" id="vorname" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
+ </div>
+ <br>
+ <div class="input-group">
+   <span class="input-group-addon">Name:</span>
+  <input type="text" id="nachname" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
+ </div>
+ <br>
+<div class="input-group">
+   <span class="input-group-addon">Adresse:</span>
+  <input type="text" id="adresse" class="form-control" placeholder="Adresse" aria-describedby="basic-addon2">
+ </div>
+ <br>
+<div class="input-group">
+   <span class="input-group-addon">PLZ:</span>
+  <input type="text" id="plz" class="form-control" placeholder="PLZ" aria-describedby="basic-addon2">
+ </div>
+<br> 
+<div class="input-group">
+   <span class="input-group-addon">Ort:</span>
+  <input type="text" id="ort" class="form-control" placeholder="Ort" aria-describedby="basic-addon2">
+ </div>
+ <br> 
+<div class="input-group">
+   <span class="input-group-addon">E-Mail:</span>
+  <input type="email" id="mail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
+ </div>
+ <br> 
+<div class="input-group">
+   <span class="input-group-addon">Phone:</span>
+  <input type="tel" id="phone" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
+ </div>
+
+<br>
+
+
+ </form>
+ 
+ <input type="button" value="weiter" id="weiter1">
+</div>
+
+
+<div id="formbuch1"class="col-md-5">
+<h2> Checkout: </h2>
+
+Bitte Bestätigen Sie folgende Angaben: <br>
+
+<p id="checkout"> </p>
+
+<p id="Offerte1"></p>
+<br>
+<input type="button" value="Bestätigen und Anfrage absenden" id="anfrage">
+<br><br>
+<p> <b> Mit dem Klicken auf 'Bestätigen und Anfrage absenden' bestätigen Sie, mit unseren AGB's einverstanden zu sein. </b> </p>
+
+</div>
+
+
+
+
+<div class="col-md-1">
+</div>
+
+
+<div class="col-md-6">
+<h3>Buchungskonditionen:</h3>
+
+<ul>
+
+<li> Alle Fahrzeuge: Fr. 3.50 pro gefahrenen km. </li>
+
+<li>Ab 100 km berechnen wir noch Fr. 3.- pro gefahrenen km. </li>
+
+<li>Luxuspaket: Kosten: Fr. 120.-<br>2 Flaschen Champagner für unterwegs.  </br></li>
+
+<li>Wir empfehlen unsere Zusatzversicherung: Kosten: Fr. 100.-<br>Ohne Zusatzversicherung haften Sie für allfällige Reperaturen.</br> </li>
+
+<li>Pro Buchung verbuchen wir zudem pro Person Fr. 90.- als Pauschale. </li>
+
+</ul>
+
+<p> </p>
+
+<div id="map"></div>
+
+<p id="Offerte"></p>
+
+</div>
+
+
+
+
+
+
+</div>
+<script>
+var origin = 'yes';
+var zusatzkosten = 90;
+var zusatztext = [];
+var fahrkosten = 0
+var offerte = "Test"
+var checkout = "Test"
+var postfürbock = ["Anbei erhalten Sie die Angaben aus unserem Formular übermittelt:"]
+var personen = 0
+var personenkosten = "0"
+
+
+
+
+
+
+// Einbindung der Map von Google - wird nicht angezeigt, da display: none;
+      function initMap() {
+		// Map Start ohne Marker
+		if (origin = 'yes') {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 46.947974, lng: 7.447447},
+          zoom: 8
+        });
+		}
+		else {
+		alert (Ok)
+			
+		}
+      }
+// Einbindung der Map von Google - wird nicht angezeigt, da display: none;
+
+
+$('#anzpersonen').on("change mousemove", function() {
+    $(this).next().html($(this).val());
+    var personen = document.getElementById("anzpersonen").value
+    document.getElementById("anzahlpersonen").innerHTML = "Anzahl Personen: " + personen;
+     });
+    
+
+
+
+
+
+
+
+$('#anfrage').click(function() {
+	console.log(postfürbock)
+
+
+
+     });
+
+ 
+
+$('#weiter1').click(function() {
+	$("#formbuch").hide()
+	$("#formbuch1").show()
+	$("#Offerte").hide()
+	$("#Offerte1").show()
+	var vorname =$("#vorname").val();
+	var nachname = $("#nachname").val();
+	var adresse = $("#adresse").val();
+	var plz = $("#plz").val();
+	var ort = $("#ort").val();
+	var mail = $("#mail").val();
+	var phone = $("#phone").val();
+	var hinfahrt = $("#hinfahrt").val();
+	var rückfahrt = $("#rückfahrt").val();
+	var anrede = $('input[name=anrede]:checked', '#buchungsanfrage').val()
+	postfürbock.push("Datum Hinfahrt: " + hinfahrt, "Datum Rückfahrt: " + rückfahrt, "Anrede: " +  anrede, "Vorname: " + vorname, "Nachname: " + nachname, "Adresse: " + adresse, "PLZ: "  + plz + "Ort: " + ort, "E-Mail: " + mail, "Phone: " + phone);
+	
+
+	$("#checkout").append("<br>" + "Datum Hinfahrt: " + hinfahrt + "<br>" +
+						"Datum Rückfahrt: " + rückfahrt + "<br>" + 
+						"Vor- / Nachname: " + anrede + " " + vorname + " " + nachname + " <br> " +
+						"Adresse: " + adresse + " <br> " + 
+						"PLZ/Ort: " + plz + " / " + ort  + " <br> " +
+						"E-Mail: " + mail + " <br> " +
+						"Phone: " + phone );
+     });
+
+
+
+
+$('#weiter').click(function() {
+	$("#erneut").hide()
+	$("#formkalk").hide()
+	$("#formbuch").show()
+
+     });
+
+
+$('#berechnen').click(function() {
+  origin = document.getElementById('source').value; //Get the source string
+  destination = document.getElementById('destination').value; //Get the destination string
+  var service = new google.maps.DistanceMatrixService(); //initialize the distance service
+  service.getDistanceMatrix(
+    {
+      origins: [origin], //set origin, you can specify multiple sources here
+      destinations: [destination],//set destination, you can specify multiple destinations here
+      travelMode: google.maps.TravelMode.DRIVING, //set the travelmode
+      unitSystem: google.maps.UnitSystem.METRIC,//The unit system to use when displaying distance
+      avoidHighways: false,
+      avoidTolls: false
+    }, calcDistance); // here calcDistance is the call back function
+     $("#berechnen").hide();
+     $("#erneut").show();
+     $("#weiter").show();
+     $("#anfragewarten").show();
+     
+     });
+     
+$('#erneut').click(function() {
+	var fahrkosten = 0
+	  origin = document.getElementById('source').value; //Get the source string
+  destination = document.getElementById('destination').value; //Get the destination string
+  var service = new google.maps.DistanceMatrixService(); //initialize the distance service
+  service.getDistanceMatrix(
+    {
+      origins: [origin], //set origin, you can specify multiple sources here
+      destinations: [destination],//set destination, you can specify multiple destinations here
+      travelMode: google.maps.TravelMode.DRIVING, //set the travelmode
+      unitSystem: google.maps.UnitSystem.METRIC,//The unit system to use when displaying distance
+      avoidHighways: false,
+      avoidTolls: false
+    }, calcDistance); // here calcDistance is the call back function
+	});
+ 
+	
+
+
+
+function calcDistance(response, status) {
+  if (status != google.maps.DistanceMatrixStatus.OK) { // check if there is valid result
+    alert('Error was: ' + status);
+  } else {
+    var origins = response.originAddresses;
+    var destinations = response.destinationAddresses;
+	
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements; 
+      for (var j = 0; j < results.length; j++) {
+		  distanz = parseFloat(results[j].distance.text)
+		var zusatzkosten = 90;
+		var zusatztext = [];
+
+		var personen = $("#anzpersonen").val();
+		var personenkosten = "Personen: " + personen + " (" + (personen*90) + "CHF)";
+		zusatztext.push(personenkosten);
+		
+		
+
+		  
+
+	if (distanz < 100) {
+		var fahrkosten = distanz*3*2;
+	} else {
+		var fahrkosten = distanz*3.5*2;
+	}	
+	if ($('#einweg').is(':checked')) {
+		var fahrkosten = fahrkosten/2;
+	}
+	
+	if ($('#luxuspaket').is(':checked')) {
+		zusatzkosten = zusatzkosten + 120;
+		zusatztext.push(" Luxuspaket (120.-)");
+	}
+		if ($('#versicherung').is(':checked')) {
+		zusatzkosten = zusatzkosten + 100;
+		zusatztext.push(" Versicherung (100.-)");
+	}
+	
+		if (!$('#versicherung, #luxuspaket').is(':checked')) {
+		zusatztext.push(" keine Zusätzlichen Leistungen");
+	}
+	zusatzkosten = zusatzkosten+(personen*90);
+	
+
+
+
+zusatztext.toString();
+	
+		
+	var element = document.getElementById("Offerte");
+    element.innerHTML = 
+"<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
+
+"Details: " + "<br>" + zusatztext + "<br>"
+    
++ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
++ "<b>Alle Angaben ohne Gewähr!</b>";
+
+	var element = document.getElementById("Offerte1");
+    element.innerHTML = 
+"<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
+
+"Details : " + "<br>" + zusatztext + "<br>"
+    
++ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
++ "<b>Alle Angaben ohne Gewähr!</b>";
+
+	postfürbock.push("Abholung von: " + origin, "Reiseziel: " + destination, "Distanz: " + distanz + "Km", "Fahrtkosten: " + fahrkosten + "CHF", "Weitere Kosten : " + zusatztext, "Gesamtkosten: " + (round(fahrkosten, 0) +zusatzkosten)) + " CHF";
+	
+		
+		
+		
+		
+		
+      }
+    }
+  }
+}
+
+	function round(number, decimals){
+	//Rundet eine Zahl auf eine bestimmte Nachkommastelle
+	return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+}
+
+
+
+</script>
+
+
+
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+async defer></script>
+
+
+
+
+</body>
+
+    <footer class="footer">
+      <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker
+        <a href="impressum.html">Impressum</a>
+      </div>
+</footer>
+</html>
