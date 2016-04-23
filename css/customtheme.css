@@ -43,6 +43,9 @@ h3 {
 h1,h2,h3,h4,h5 {
 	color: #0891E8;
 }
+.sb-description > h4 {
+	color: #FFFFFF;	
+}
 .input-group-addon {
 	min-width: 100px;
     text-align:left;
