@@ -102,6 +102,9 @@ h1,h2,h3,h4,h5 {
 	font-weight: bold;
 	display: none;
 }
+.navbar-nav>.active>a {
+  color: #0891E8 !important;
+}
 
 
 /* Range Slider gemacht mit: http://www.cssportal.com/style-input-range/*/
