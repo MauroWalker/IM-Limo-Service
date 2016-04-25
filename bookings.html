@@ -7,9 +7,11 @@
 <title>Bock auf Limo</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/customtheme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAE-xBl-Wl-jZGSbwYQPA1bW2cTalKZ_pg" type="text/javascript"></script>
 <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
@@ -81,6 +83,7 @@
 <!-- Navbar ende -->
 <div class="container">
 
+<!--- Formular Seite 1: Angaben über Abholort, Reiseziel sowie Anz. Personen --->
 
 <div id="formkalk"class="col-md-5">
 
@@ -99,50 +102,43 @@
   <input type="text" id="destination" class="form-control" placeholder="Strasse, Nr, Ort" aria-describedby="basic-addon2" required>
  </div><br>
  
- 
 <p id="anzahlpersonen">Anzahl Personen: 1</p>
- <input type="range" id="anzpersonen" min="1" max="30" value="1">
+ <input type="range" id="anzpersonen" min="1" max="30" value="1"> 
  
-
-
 <br>
+
   <label>
     <input type="checkbox" name="CheckboxGroup1" value="kontrollkästchen" id="einweg">
     Ohne Rückfahrt</label>
+    
   <br>
+  
   <label>
     <input type="checkbox" name="CheckboxGroup1_" value="kontrollkästchen" id="luxuspaket">
     Luxuspaket</label>
+    
   <br>
+  
   <label>
       <input type="checkbox" name="CheckboxGroup1_" value="kontrollkästchen" id="versicherung">
     Zusatzversicherung</label>
+    
   <br><br>
-
-
 
 <input type="button" value="Berechnen" id="berechnen">
 <input type="button" value="Neu Berechnen" id="erneut">
 <input type="button" value="weiter" id="weiter">
 <br> <br>
- <p id="alleseingeben"> Bitte füllen Sie alle erforderlichen Felder aus. <p>
-<p id="anfragewarten"> Bitte haben Sie ein wenig Geduld, Ihre Offerte erscheint in wenigen Sekunden. <p>
-
-
+<p id="alleseingeben"> Bitte füllen Sie alle erforderlichen Felder aus. <p> <!--- ist zu Beginn ausgeblendet --->
+<p id="anfragewarten"> Bitte haben Sie ein wenig Geduld, Ihre Offerte erscheint in wenigen Sekunden. <p>  <!--- ist zu Beginn ausgeblendet --->
 
 
 </form>
 </div>
 
+<!--- Formular Seite 1 --->
 
-
-
-
-
-
-
-
-
+<!--- Formular Seite 2: Angaben über Datum der Dienstleistung sowie Kontaktangaben des Kunden --->
 
 <div id="formbuch" class="col-md-5">
 <form id="buchungsanfrage">
@@ -150,13 +146,16 @@
 <h2> Buchungsanfrage: </h2>
 	
 Bitte geben Sie uns Ihr gewünschtes Reisedatum an:
+
 <br><br>
 
 <div class="input-group">
    <span class="input-group-addon datumform">Datum Hinfahrt:</span>
   <input type="datetime" id="hinfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2" required>
  </div>
+ 
  <br>
+ 
  <div class="input-group">
    <span class="input-group-addon datumform">Datum Rückfahrt:</span>
   <input type="datetime" id="rückfahrt" class="form-control" placeholder="Datum Hinfahrt" aria-describedby="basic-addon2" required>
@@ -164,7 +163,8 @@ Bitte geben Sie uns Ihr gewünschtes Reisedatum an:
  <br>
 
 
-Bitte geben Sie Ihre Kontaktangaben.
+Bitte geben Sie uns Ihre Kontaktangaben an.
+
 <br><br>
 
 <div class="input-group">
@@ -173,37 +173,51 @@ Bitte geben Sie Ihre Kontaktangaben.
  <span class="anrede">  <input type="radio"  name="anrede" value="Frau"> Frau </span>
  <span class="anrede">  <input type="radio"  name="anrede" value="Firma"> Firma </span>
  </div>
+ 
  <br>
+ 
 <div class="input-group">
    <span class="input-group-addon">Vorname:</span>
   <input type="text" id="vorname" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
  </div>
+ 
  <br>
+ 
  <div class="input-group">
    <span class="input-group-addon">Name:</span>
   <input type="text" id="nachname" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
  </div>
- <br>
+ 
+<br>
+ 
 <div class="input-group">
    <span class="input-group-addon">Adresse:</span>
   <input type="text" id="adresse" class="form-control" placeholder="Adresse" aria-describedby="basic-addon2">
  </div>
+ 
  <br>
+ 
 <div class="input-group">
    <span class="input-group-addon">PLZ:</span>
   <input type="text" id="plz" class="form-control" placeholder="PLZ" aria-describedby="basic-addon2">
  </div>
-<br> 
+ 
+<br>
+ 
 <div class="input-group">
    <span class="input-group-addon">Ort:</span>
   <input type="text" id="ort" class="form-control" placeholder="Ort" aria-describedby="basic-addon2">
  </div>
+ 
  <br> 
+ 
 <div class="input-group">
    <span class="input-group-addon">E-Mail:</span>
   <input type="email" id="mail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
  </div>
+ 
  <br> 
+ 
 <div class="input-group">
    <span class="input-group-addon">Phone:</span>
   <input type="tel" id="phone" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
@@ -211,14 +225,17 @@ Bitte geben Sie Ihre Kontaktangaben.
 
 <br>
 
-
  </form>
  
  <input type="button" value="weiter" id="weiter1">
  <br><br>
- <p id="alleseingeben1"> Bitte füllen Sie alle erforderlichen Felder aus. <p>
+ <p id="alleseingeben1"> Bitte füllen Sie alle erforderlichen Felder aus. <p>  <!--- ist zu Beginn ausgeblendet - erscheint bei fehlenden Angaben --->
 </div>
 
+<!--- Formular Seite 2 --->
+
+
+<!--- Formular Seite 3: Checkout - Auflistung der Bestellung und Button zum Versenden der finalen Bestellung --->
 
 <div id="formbuch1"class="col-md-5">
 <h2> Checkout: </h2>
@@ -228,12 +245,18 @@ Bitte Bestätigen Sie folgende Angaben: <br>
 <p id="checkout"> </p>
 
 <p id="Offerte1"></p>
+
 <br>
+
 <input type="button" value="Bestätigen und Anfrage absenden" id="anfrage">
+
 <br><br>
+
 <p> <b> Mit dem Klicken auf 'Bestätigen und Anfrage absenden' bestätigen Sie, mit unseren AGB's einverstanden zu sein. </b> </p>
 
 </div>
+
+<!--- Formular Seite 3 --->
 
 
 
@@ -242,8 +265,12 @@ Bitte Bestätigen Sie folgende Angaben: <br>
 </div>
 
 
+<!--- Buchungskonditionen und Offerte  --->
 <div class="col-md-6">
-<h3>Buchungskonditionen:</h3>
+	
+<p id="Offerte"></p> <!--- mit JS wird hier Teil der Offerte eingefügt -->
+	
+<h2>Buchungskonditionen:</h2>
 
 <ul>
 
@@ -261,11 +288,13 @@ Bitte Bestätigen Sie folgende Angaben: <br>
 
 <p> </p>
 
-<div id="map"></div>
+<div id="map"></div> <!--- Einbindung der Google Map: Da diese Webseite zu Schulungszwecken erstellt wurde, haben wir auf das Anzeigen der Map verzichtet. In einem realen Prjoekt müsste die Map angezeigt werden! Google verlangt dies bei der Nutzung von Google Map Services. Weitere Details unter: https://developers.google.com/places/web-service/intro?hl=de --->
 
-<p id="Offerte"></p>
+
 
 </div>
+
+<!--- Buchungskonditionen  --->
 
 
 
@@ -274,6 +303,7 @@ Bitte Bestätigen Sie folgende Angaben: <br>
 
 </div>
 <script>
+/* Globale Variablen */
 var origin = 'yes';
 var zusatzkosten = 90;
 var zusatztext = [];
@@ -284,14 +314,8 @@ var postfürbock = ["Anbei erhalten Sie die Angaben aus unserem Formular übermi
 var personen = 0
 var personenkosten = "0"
 
-
-
-
-
-
-// Einbindung der Map von Google - wird nicht angezeigt, da display: none;
+// Einbindung der Map von Google - wird nicht angezeigt, da display: none; 
       function initMap() {
-		// Map Start ohne Marker
 		if (origin = 'yes') {
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
@@ -304,30 +328,186 @@ var personenkosten = "0"
 			
 		}
       }
-// Einbindung der Map von Google - wird nicht angezeigt, da display: none;
+// Da diese Webseite zu Schulungszwecken erstellt wurde, haben wir auf das Anzeigen der Map verzichtet. In einem realen Prjoekt müsste die Map angezeigt werden! Google verlangt dies bei der Nutzung von Google Map Services. Weitere Details unter: https://developers.google.com/places/web-service/intro?hl=de
 
 
+// Formular Seite 1: range input value auslesen und anzeigen
 $('#anzpersonen').on("change mousemove", function() {
     $(this).next().html($(this).val());
     var personen = document.getElementById("anzpersonen").value
     document.getElementById("anzahlpersonen").innerHTML = "Anzahl Personen: " + personen;
      });
+     
+     
+ 
+ // Formular Seite 1: Distanz von Abholungsort und Reiseziel berechnen. Aufgrund der Distanz und Angaben in der Checkbox eine Offerte erstellen
+ $('#berechnen').click(function() {
+	 
+	if($('#source').val() == ''){ //Reiseziel auslesen, wenn leer wird Formularfeld rot und Hinweis eingeblendet
+    $("#source").css("border", "1px solid red");
+    $("#alleseingeben").show()
+   }
+   	if($('#destination').val() == ''){   //Reiseziel auslesen, wenn leer wird Formularfeld rot und Hinweis eingeblendet
+	$("#destination").css("border", "1px solid red");
+	$("#alleseingeben").show()
+   }
+   else {
+  $("#destination").css("border", ""); //Eingabe ok -> Eingabefeld wieder normal färben
+  $("#source").css("border", "");
+  
+  
+  //Über die Google Services die Distanz berechnen:
+  origin = document.getElementById('source').value; //Get the source string
+  destination = document.getElementById('destination').value; //Get the destination string
+  var service = new google.maps.DistanceMatrixService(); //initialize the distance service
+  service.getDistanceMatrix(
+    {
+      origins: [origin], //set origin, you can specify multiple sources here
+      destinations: [destination],//set destination, you can specify multiple destinations here
+      travelMode: google.maps.TravelMode.DRIVING, //set the travelmode
+      unitSystem: google.maps.UnitSystem.METRIC,//The unit system to use when displaying distance
+      avoidHighways: false,
+      avoidTolls: false
+    }, calcDistance); // here calcDistance is the call back function
     
 
+// Entweder die Distanz erneut berechnen oder weiter zu Formularseite 2
+     $("#berechnen").hide();
+     $("#erneut").show();
+     $("#weiter").show();
+     $("#anfragewarten").show();
+     $("#alleseingeben").hide()
+     }
+     });
+     
+$('#erneut').click(function() {
+	var fahrkosten = 0 //Kosten werden wieder auf 0 gesetzt, damit neu berechnet werden kann
+
+  //Über die Google Services die Distanz berechnen:
+	  origin = document.getElementById('source').value; //Get the source string
+  destination = document.getElementById('destination').value; //Get the destination string
+  var service = new google.maps.DistanceMatrixService(); //initialize the distance service
+  service.getDistanceMatrix(
+    {
+      origins: [origin], //set origin, you can specify multiple sources here
+      destinations: [destination],//set destination, you can specify multiple destinations here
+      travelMode: google.maps.TravelMode.DRIVING, //set the travelmode
+      unitSystem: google.maps.UnitSystem.METRIC,//The unit system to use when displaying distance
+      avoidHighways: false,
+      avoidTolls: false
+    }, calcDistance); // here calcDistance is the call back function
+	});
+ 
+	
+
+
+  //Über die Google Services die Distanz berechnen:
+function calcDistance(response, status) {
+  if (status != google.maps.DistanceMatrixStatus.OK) { // check if there is valid result
+    alert('Error was: ' + status);
+  } else {
+    var origins = response.originAddresses;
+    var destinations = response.destinationAddresses;
+	
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements; 
+      for (var j = 0; j < results.length; j++) {
+		  distanz = parseFloat(results[j].distance.text)
+		var zusatzkosten = 90;
+		var zusatztext = [];
+
+		var personen = $("#anzpersonen").val();
+		var personenkosten = "Personen: " + personen + " (" + (personen*90) + ".-)";
+		zusatztext.push(personenkosten);
+		
+
+// Preis aufgrund der Buchungskonditionen berechnen:
+
+	if (distanz < 100) {
+		var fahrkosten = distanz*3*2;
+	} else {
+		var fahrkosten = distanz*3.5*2;
+	}	
+	if ($('#einweg').is(':checked')) {
+		var fahrkosten = fahrkosten/2;
+	}
+	
+	if ($('#luxuspaket').is(':checked')) {
+		zusatzkosten = zusatzkosten + 120;
+		zusatztext.push(" Luxuspaket (120.-)");
+	}
+		if ($('#versicherung').is(':checked')) {
+		zusatzkosten = zusatzkosten + 100;
+		zusatztext.push(" Versicherung (100.-)");
+	}
+	
+		if (!$('#versicherung, #luxuspaket').is(':checked')) {
+		zusatztext.push(" keine Zusätzlichen Leistungen");
+	}
+	zusatzkosten = zusatzkosten+(personen*90);
+	
 
 
 
+zusatztext.toString(); // variable in String umwandeln, damit in Offerte angezeigt werden kann
+	
+		
+	var element = document.getElementById("Offerte");
+    element.innerHTML = 
+"<h2> Offerte: </h2>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
 
+"Details: " + "<br>" + zusatztext + "<br>"
+    
++ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
++ "<b>Alle Angaben ohne Gewähr!</b>";
 
+	var element = document.getElementById("Offerte1");
+    element.innerHTML = 
+"<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
 
-$('#anfrage').click(function() {
-	console.log(postfürbock)
+"Details : " + "<br>" + zusatztext + "<br>"
+    
++ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
++ "<b>Alle Angaben ohne Gewähr!</b>";
 
+	postfürbock.push("Abholung von: " + origin, "Reiseziel: " + destination, "Distanz: " + distanz + "Km", "Fahrtkosten: " + fahrkosten + "CHF", "Weitere Kosten : " + zusatztext, "Gesamtkosten: " + (round(fahrkosten, 0) +zusatzkosten)) + " CHF";
+	
+		
+		
+		
+		
+		
+      }
+    }
+  }
+}
+     
+     
+     
+     
+     
+     
+     
+     
 
+// Formular Seite 1: Buttonset zwei:
+$('#weiter').click(function() {
+	$("#erneut").hide() // Kosten erneut berechnen
+	$("#formkalk").hide() // rote Felder wieder normal färben
+	$("#formbuch").show() // Weiter zu Formularseite 2
 
      });
 
  
+// Formular Seite 2: Angaben auslesen, prüfen ob Eingabe erfolgt, wenn nicht: Feld wird rot gefärbt. Wenn überall eingabe erfolgte: Angaben sammeln und im Formular 3 anzeigen und angaben dem Array postfürbock hinzufügen
+
+
+  $(function() {
+    $( "#hinfahrt" ).datepicker();
+    $( "#rückfahrt" ).datepicker();
+  });
+
+
 
 $('#weiter1').click(function() {
 		if($('#hinfahrt').val() == ''){
@@ -420,153 +600,26 @@ $('#weiter1').click(function() {
 
 
 
-$('#weiter').click(function() {
-	$("#erneut").hide()
-	$("#formkalk").hide()
-	$("#formbuch").show()
-
-     });
-
-
-$('#berechnen').click(function() {
-	if($('#source').val() == ''){
-    $("#source").css("border", "1px solid red");
-    $("#alleseingeben").show()
-   }
-   	if($('#destination').val() == ''){
-	$("#destination").css("border", "1px solid red");
-	$("#alleseingeben").show()
-   }
-   else {
-  $("#destination").css("border", "");
-  $("#source").css("border", "");
-  origin = document.getElementById('source').value; //Get the source string
-  destination = document.getElementById('destination').value; //Get the destination string
-  var service = new google.maps.DistanceMatrixService(); //initialize the distance service
-  service.getDistanceMatrix(
-    {
-      origins: [origin], //set origin, you can specify multiple sources here
-      destinations: [destination],//set destination, you can specify multiple destinations here
-      travelMode: google.maps.TravelMode.DRIVING, //set the travelmode
-      unitSystem: google.maps.UnitSystem.METRIC,//The unit system to use when displaying distance
-      avoidHighways: false,
-      avoidTolls: false
-    }, calcDistance); // here calcDistance is the call back function
-     $("#berechnen").hide();
-     $("#erneut").show();
-     $("#weiter").show();
-     $("#anfragewarten").show();
-     $("#alleseingeben").hide()
-     }
-     });
-     
-$('#erneut').click(function() {
-	var fahrkosten = 0
-	  origin = document.getElementById('source').value; //Get the source string
-  destination = document.getElementById('destination').value; //Get the destination string
-  var service = new google.maps.DistanceMatrixService(); //initialize the distance service
-  service.getDistanceMatrix(
-    {
-      origins: [origin], //set origin, you can specify multiple sources here
-      destinations: [destination],//set destination, you can specify multiple destinations here
-      travelMode: google.maps.TravelMode.DRIVING, //set the travelmode
-      unitSystem: google.maps.UnitSystem.METRIC,//The unit system to use when displaying distance
-      avoidHighways: false,
-      avoidTolls: false
-    }, calcDistance); // here calcDistance is the call back function
-	});
- 
-	
 
 
 
-function calcDistance(response, status) {
-  if (status != google.maps.DistanceMatrixStatus.OK) { // check if there is valid result
-    alert('Error was: ' + status);
-  } else {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-	
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements; 
-      for (var j = 0; j < results.length; j++) {
-		  distanz = parseFloat(results[j].distance.text)
-		var zusatzkosten = 90;
-		var zusatztext = [];
 
-		var personen = $("#anzpersonen").val();
-		var personenkosten = "Personen: " + personen + " (" + (personen*90) + ".-)";
-		zusatztext.push(personenkosten);
-		
-		
-
-		  
-
-	if (distanz < 100) {
-		var fahrkosten = distanz*3*2;
-	} else {
-		var fahrkosten = distanz*3.5*2;
-	}	
-	if ($('#einweg').is(':checked')) {
-		var fahrkosten = fahrkosten/2;
-	}
-	
-	if ($('#luxuspaket').is(':checked')) {
-		zusatzkosten = zusatzkosten + 120;
-		zusatztext.push(" Luxuspaket (120.-)");
-	}
-		if ($('#versicherung').is(':checked')) {
-		zusatzkosten = zusatzkosten + 100;
-		zusatztext.push(" Versicherung (100.-)");
-	}
-	
-		if (!$('#versicherung, #luxuspaket').is(':checked')) {
-		zusatztext.push(" keine Zusätzlichen Leistungen");
-	}
-	zusatzkosten = zusatzkosten+(personen*90);
-	
-
-
-
-zusatztext.toString();
-	
-		
-	var element = document.getElementById("Offerte");
-    element.innerHTML = 
-"<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
-
-"Details: " + "<br>" + zusatztext + "<br>"
-    
-+ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
-+ "<b>Alle Angaben ohne Gewähr!</b>";
-
-	var element = document.getElementById("Offerte1");
-    element.innerHTML = 
-"<h3> Offerte: </h3>" + "Entfernung von " + origin + " nach " + destination + ": " + distanz + " Km. " + " " + "<b>Kosten: " + round(fahrkosten, 0) + " CHF</b>." + "<br>" +
-
-"Details : " + "<br>" + zusatztext + "<br>"
-    
-+ "Die Gesamtkosten belaufen sich auf <b>" + (round(fahrkosten, 0) +zusatzkosten) + " CHF</b>." + "</br>"
-+ "<b>Alle Angaben ohne Gewähr!</b>";
-
-	postfürbock.push("Abholung von: " + origin, "Reiseziel: " + destination, "Distanz: " + distanz + "Km", "Fahrtkosten: " + fahrkosten + "CHF", "Weitere Kosten : " + zusatztext, "Gesamtkosten: " + (round(fahrkosten, 0) +zusatzkosten)) + " CHF";
-	
-		
-		
-		
-		
-		
-      }
-    }
-  }
-}
-
+// Kosten auf dezimalstellen runden
 	function round(number, decimals){
 	//Rundet eine Zahl auf eine bestimmte Nachkommastelle
 	return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
 }
 
 
+
+
+// Formular Seite 3: Alle Angaben per PHP versenden (und in Console anzeigen)
+$('#anfrage').click(function() {
+	console.log(postfürbock)
+//php folgt noch
+
+
+     });
 
 </script>
 
