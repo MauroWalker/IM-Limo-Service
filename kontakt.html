@@ -7,7 +7,6 @@
 <title>Bock auf Limo</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="css/customtheme.css" rel="stylesheet" type="text/css">
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
@@ -23,30 +22,20 @@
 <![endif]-->
 </head>
 
-
 <body style="padding-top: 70px">
 <!-- Navbar anfang -->
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container-fluid"> 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="index.html"><i class="fa fa-lemon-o"></i> Bock auf Limo</a> 
-      
-      <div class="hidden-md hidden-sm hidden-lg hidden-xl pull-right">
-	      
-
-	     <a class="navbar-brand" href="angebot.html"><i class="fa fa-car" ></i></a>
-	     <a class="navbar-brand" href="bookings.html"><i class="fa fa-map-signs" ></i></a>
-	     <a class="navbar-brand" href="kontakt.html"><i class="fa fa-comments"></i></a>
-	     <a class="navbar-brand" href="about.html"><i class="fa fa-user"></i></a>   
-      </div>       
-     	 </div> 
-     	     
+      <a class="navbar-brand" href="index.html"><i class="fa fa-lemon-o"></i> Bock auf Limo</a>
+      <div class="hidden-md hidden-sm hidden-lg hidden-xl pull-right"> <a class="navbar-brand" href="angebot.html"><i class="fa fa-car" ></i></a> <a class="navbar-brand" href="bookings.html"><i class="fa fa-map-signs" ></i></a> <a class="navbar-brand" href="kontakt.html"><i class="fa fa-comments"></i></a> <a class="navbar-brand" href="about.html"><i class="fa fa-user"></i></a> </div>
+    </div>
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="topFixedNavbar1">
       <ul class="nav navbar-nav">
-      <li>
         <li class=""><a href="angebot.html">Angebot<span class="sr-only">(current)</span></a></li>
         <li><a href="bookings.html">Buchen</a></li>
         <li class="dropdown hidden-sm"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Fahrzeuge<span class="caret"></span></a>
@@ -61,75 +50,75 @@
           </ul>
         </li>
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
-              <li><a href="about.html">Über Uns</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="about.html">Über Uns</a></li>
+        <li class="active"><a href="kontakt.html">Kontakt</a></li>
         <li><a href="dokumentation.html">Dokumentation</a></li>
-
-            <li><form class="navbar-form hidden-xs" role="search">
-
-
       </ul>
     </div>
-    <!-- /.navbar-collapse -->
+    <!-- /.navbar-collapse --> 
   </div>
-  <!-- /.container-fluid -->
+  <!-- /.container-fluid --> 
 </nav>
 <!-- Navbar ende -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Kontaktformular</h1>
+      <br>
+      <p>Wir freuen uns auf ihre Anfrage</p>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <form>
+        <div class="input-group"><span class="input-group-addon">Anrede:</span><span class="anrede">
+          <input type="radio"  name="anrede" value="Herr">
+          Herr</span><span class="anrede">
+          <input type="radio"  name="anrede" value="Frau">
+          Frau</span><span class="anrede">
+          <input type="radio"  name="anrede" value="Firma">
+          Firma</span></div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">Vorname:</span>
+          <input type="text" id="vorname" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">Name:</span>
+          <input type="text" id="nachname" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">Adresse:</span>
+          <input type="text" id="adresse" class="form-control" placeholder="Adresse" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">PLZ:</span>
+          <input type="text" id="plz" class="form-control" placeholder="PLZ" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">Ort:</span>
+          <input type="text" id="ort" class="form-control" placeholder="Ort" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">E-Mail:</span>
+          <input type="email" id="mail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <div class="input-group"><span class="input-group-addon">Phone:</span>
+          <input type="tel" id="phone" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
+        </div>
+        <br>
+        <input type="button" value="Senden" id="senden">
+        <br>
+        <br>
+        <p id="alleseingeben1">Bitte füllen Sie alle erforderlichen Felder aus.</p>
+      </form><br>
+</div>
+      <footer class="footer">
+   
+        <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker<a href="impressum.html">Impressum</a
+      ></footer>
+    </div>
 </body>
-
-
-
-
-
-
-
-Kontaktformular<br>
-Wir freuen uns auf ihre Anfrage<br>
-
-<input type="radio" name="gender" value="f" > Frau<br >
-<input type="radio" name="gender" value="m" > Herr<br>
-
-
-        
-        <form>
-  Vorname:
-  <input type="text" name="vorname" placeholder="Vorname"><br>
-
-  Nachname:
-  <input type="text" name="nachname" placeholder="Nachname"><br>
-
-  e-mail:
-  <input type="text" name="mail" placeholder="E-mail">  <br>
- 
-  Telefon:
-  <input type="text" name="telefon" placeholder="Telefon"><br>
-     
-  Strasse:
-  <input type="text" name="strasse" placeholder="Strasse"><br>
-    
-  Ort:
-  <input type="text" name="ort" placeholder="Ort"><br>
-   
-  PLZ:
-  <input type="text" name="plz" placeholder="PLZ"><br>
-    
-  Land:
-  <input type="text" name="land" placeholder="Land"><br>
-   
-  Nachricht:
-  <input type="text" name="nachricht" placeholder="Ihre Nachricht"><br>
-
-</form>      
-<input type="submit" value="Senden">             
-
-
-
-
-    <footer class="footer">
-      <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker
-        <a href="impressum.html">Impressum</a>
-      </div>
-</footer>
 </html>
