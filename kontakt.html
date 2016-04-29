@@ -66,7 +66,7 @@
     <div class="col-md-12">
       <h1>Kontaktformular</h1>
       <br>
-      <p>Wir freuen uns auf ihre Anfrage</p>
+      <p>Wir freuen uns auf ihre Anfrage.</p>
       <br>
     </div>
   </div>
@@ -82,43 +82,104 @@
           Firma</span></div>
         <br>
         <div class="input-group"><span class="input-group-addon">Vorname:</span>
-          <input type="text" id="vorname" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
+          <input type="text" id="vorname1" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
         </div>
         <br>
         <div class="input-group"><span class="input-group-addon">Name:</span>
-          <input type="text" id="nachname" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
-        </div>
-        <br>
-        <div class="input-group"><span class="input-group-addon">Adresse:</span>
-          <input type="text" id="adresse" class="form-control" placeholder="Adresse" aria-describedby="basic-addon2">
-        </div>
-        <br>
-        <div class="input-group"><span class="input-group-addon">PLZ:</span>
-          <input type="text" id="plz" class="form-control" placeholder="PLZ" aria-describedby="basic-addon2">
-        </div>
-        <br>
-        <div class="input-group"><span class="input-group-addon">Ort:</span>
-          <input type="text" id="ort" class="form-control" placeholder="Ort" aria-describedby="basic-addon2">
+          <input type="text" id="nachname1" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
         </div>
         <br>
         <div class="input-group"><span class="input-group-addon">E-Mail:</span>
-          <input type="email" id="mail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
+          <input type="email" id="anfragemail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
         </div>
         <br>
         <div class="input-group"><span class="input-group-addon">Phone:</span>
-          <input type="tel" id="phone" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
+          <input type="tel" id="phone1" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
+        </div>
+           <br>
+        <div class="input-group" id="anfrage2"><span class="input-group-addon">Anfrage:</span>
+          <input type="text" id="anfrage1" class="form-control" placeholder="Ihre Anfrage" aria-describedby="basic-addon2">
         </div>
         <br>
-        <input type="button" value="Senden" id="senden">
-        <br>
+        <input type="button" value="Anfrage abschicken" id="senden1">
         <br>
         <p id="alleseingeben1">Bitte füllen Sie alle erforderlichen Felder aus.</p>
+        <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. </h4>
       </form><br>
 </div>
-      <footer class="footer">
-   
-        <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker<a href="impressum.html">Impressum</a
-      ></footer>
-    </div>
-</body>
+   </div>
+   </div>
+   <script>
+	var anrede = $('input[name=anrede]:checked', '#buchungsanfrage').val()
+	var vorname = "x"
+	var name = "x"
+	var mail = "x"
+	var phone = "x"
+	var anfrage = "x"
+	var anfragealles = ["Inhalt Anfrageformular:"]
+	
+$('#senden1').click(function() {
+	var anrede = $('input[name=anrede]:checked').val()
+	var vorname = $('#vorname1').val()
+	var name = $('#nachname1').val()
+	var mail = $('#anfragemail').val()
+	var phone = $('#phone1').val()
+	var anfrage = $('#anfrage1').val()
+	anfragealles.push(anrede, vorname, name, mail, phone, anfrage)
+	console.log(anfragealles)
+	
+	if($('#vorname1').val() == ''){
+		$("#vorname1").addClass("formnotok");
+		$("#alleseingeben1").show()
+		 } else {
+		$("#vorname1").removeClass("formnotok");
+			}
+			if($('#nachname1').val() == ''){
+		$("#nachname1").addClass("formnotok");
+		$("#alleseingeben1").show()
+		 } else {
+		$("#nachname1").removeClass("formnotok");
+			}
+			if($('#anfragemail').val() == ''){
+		$("#anfragemail").addClass("formnotok");
+		$("#alleseingeben1").show()
+		 } else {
+		$("#anfragemail").removeClass("formnotok");
+			}
+			if($('#phone1').val() == ''){
+		$("#phone1").addClass("formnotok");
+		$("#alleseingeben1").show()
+		 } else {
+		$("#phone1").removeClass("formnotok");
+			}
+			if($('#anfrage1').val() == ''){
+		$("#anfrage1").addClass("formnotok");
+		$("#alleseingeben1").show()
+		 } else {
+		$("#anfrage1").removeClass("formnotok");
+		}
+		if($('#vorname1, #nachname1, #anfragemail, #phone1, #anfrage1').hasClass("formnotok")){
+		
+		} else {
+		$('#senden1').hide()
+		$("#alleseingeben1").hide()
+		$('#dankefueranfrage').show()
+		}
+
+	
+	
+	
+	
+	
+	
+	});
+
+	  
+	   
+	</script>
+         <footer class="footer">
+           <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker<a href="impressum.html">Impressum</a>
+        </div>
+        </footer>
+        </body>
 </html>

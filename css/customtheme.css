@@ -110,8 +110,15 @@ h1,h2,h3,h4,h5 {
 	background-color: #0891E8 !important;
 	color: white !important;
 }
-
-
+#anfrage1 {
+	min-height: 200px !important;
+}
+#anfrage2 {
+	 vertical-align: text-top !important;
+}
+#dankefueranfrage {
+	display: none;
+}
 /* Range Slider gemacht mit: http://www.cssportal.com/style-input-range/*/
 	
 input[type=range] {
