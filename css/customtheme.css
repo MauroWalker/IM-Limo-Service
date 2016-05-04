@@ -119,6 +119,12 @@ h1,h2,h3,h4,h5 {
 #dankefueranfrage {
 	display: none;
 }
+.btn-danger {
+	background-color: #F01800 !important;
+}
+#anfragekontakt {
+	display:none
+}
 /* Range Slider gemacht mit: http://www.cssportal.com/style-input-range/*/
 	
 input[type=range] {

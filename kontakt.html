@@ -66,12 +66,13 @@
     <div class="col-md-12">
       <h1>Kontaktformular</h1>
       <br>
-      <p>Wir freuen uns auf ihre Anfrage.</p>
+      <p id="anfragefreuen">Wir freuen uns auf ihre Anfrage.</p>
       <br>
     </div>
   </div>
+  
   <div class="row">
-    <div class="col-md-7">
+    <div id="kontaktformular" class="col-md-7">
       <form>
         <div class="input-group"><span class="input-group-addon">Anrede:</span><span class="anrede">
           <input type="radio"  name="anrede" value="Herr">
@@ -104,10 +105,15 @@
         <input type="button" value="Anfrage abschicken" id="senden1">
         <br>
         <p id="alleseingeben1">Bitte füllen Sie alle erforderlichen Felder aus.</p>
-        <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. </h4>
+        
       </form><br>
 </div>
    </div>
+   
+
+	 <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. </h4> 
+	 <p id="anfragekontakt"> Test</p> 
+
    </div>
    <script>
 	var anrede = $('input[name=anrede]:checked', '#buchungsanfrage').val()
@@ -164,7 +170,14 @@ $('#senden1').click(function() {
 		$('#senden1').hide()
 		$("#alleseingeben1").hide()
 		$('#dankefueranfrage').show()
+		$('#kontaktformular').hide()
+		$('#anfragefreuen').hide()
+		
+		$('#anfragekontakt').show()
 		}
+		
+		var element = document.getElementById("anfragekontakt");
+		element.innerHTML = "<h2> Ihre Anfrage: </h2>" + anfrage + "<br><br> Ihre Angaben: </br>" + "Vor-/Name: " + vorname + " " + name + "<br>E-Mail: " + mail + "<br>" + "Phone: " + phone;
 
 	
 	
