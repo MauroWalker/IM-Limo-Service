@@ -73,36 +73,36 @@
   
   <div class="row">
     <div id="kontaktformular" class="col-md-7">
-      <form>
+      <form target="_blank" action="http://mmp.mediologie.ch/im2/forms/ausgabe.php">
         <div class="input-group"><span class="input-group-addon">Anrede:</span><span class="anrede">
-          <input type="radio"  name="anrede" value="Herr">
+          <input type="radio"  name="anrede" value="Herr" name="Anrede">
           Herr</span><span class="anrede">
-          <input type="radio"  name="anrede" value="Frau">
+          <input type="radio"  name="anrede" value="Frau" name="Anrede">
           Frau</span><span class="anrede">
-          <input type="radio"  name="anrede" value="Firma">
+          <input type="radio"  name="anrede" value="Firma" name="Anrede">
           Firma</span></div>
         <br>
         <div class="input-group"><span class="input-group-addon">Vorname:</span>
-          <input type="text" id="vorname1" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2">
+          <input type="text" id="vorname1" class="form-control" placeholder="Vorname" aria-describedby="basic-addon2" name="Vorname">
         </div>
         <br>
         <div class="input-group"><span class="input-group-addon">Name:</span>
-          <input type="text" id="nachname1" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2">
+          <input type="text" id="nachname1" class="form-control" placeholder="Nachname" aria-describedby="basic-addon2" name="Name">
         </div>
         <br>
         <div class="input-group"><span class="input-group-addon">E-Mail:</span>
-          <input type="email" id="anfragemail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2">
+          <input type="email" id="anfragemail" class="form-control" placeholder="E-Mail" aria-describedby="basic-addon2" name="E-Mail">
         </div>
         <br>
         <div class="input-group"><span class="input-group-addon">Phone:</span>
-          <input type="tel" id="phone1" class="form-control" placeholder="Phone" aria-describedby="basic-addon2">
+          <input type="tel" id="phone1" class="form-control" placeholder="Phone" aria-describedby="basic-addon2" name="Phone">
         </div>
            <br>
         <div class="input-group" id="anfrage2"><span class="input-group-addon">Anfrage:</span>
-          <input type="text" id="anfrage1" class="form-control" placeholder="Ihre Anfrage" aria-describedby="basic-addon2">
+          <input type="text" id="anfrage1" class="form-control" placeholder="Ihre Anfrage" aria-describedby="basic-addon2" name="Anfrage">
         </div>
         <br>
-        <input type="button" value="Anfrage abschicken" id="senden1">
+        <input type="submit" value="Anfrage abschicken" id="senden1">
         <br>
         <p id="alleseingeben1">Bitte füllen Sie alle erforderlichen Felder aus.</p>
         
@@ -111,7 +111,7 @@
    </div>
    
 
-	 <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. </h4> 
+	 <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. <br></br> Die Formularfelder wurden an mmp.mediologie übermittelt (siehe neuer Tab).</h4> 
 	 <p id="anfragekontakt"> Test</p> 
 
    </div>
