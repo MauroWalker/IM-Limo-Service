@@ -70,7 +70,6 @@
       <br>
     </div>
   </div>
-  
   <div class="row">
     <div id="kontaktformular" class="col-md-7">
       <form target="_blank" action="http://mmp.mediologie.ch/im2/forms/ausgabe.php">
@@ -97,7 +96,7 @@
         <div class="input-group"><span class="input-group-addon">Phone:</span>
           <input type="tel" id="phone1" class="form-control" placeholder="Phone" aria-describedby="basic-addon2" name="Phone">
         </div>
-           <br>
+        <br>
         <div class="input-group" id="anfrage2"><span class="input-group-addon">Anfrage:</span>
           <input type="text" id="anfrage1" class="form-control" placeholder="Ihre Anfrage" aria-describedby="basic-addon2" name="Anfrage">
         </div>
@@ -105,17 +104,15 @@
         <input type="submit" value="Anfrage abschicken" id="senden1">
         <br>
         <p id="alleseingeben1">Bitte füllen Sie alle erforderlichen Felder aus.</p>
-        
-      </form><br>
+      </form>
+      <br>
+    </div>
+  </div>
+  <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. <br>
+    Die Formularfelder wurden an mmp.mediologie übermittelt (siehe neuer Tab).</h4>
+  <p id="anfragekontakt"> Test</p>
 </div>
-   </div>
-   
-
-	 <h4 id="dankefueranfrage">Vielen Dank für Ihre Anfrage. Sie erhalten in kürze von uns eine Antwort. <br></br> Die Formularfelder wurden an mmp.mediologie übermittelt (siehe neuer Tab).</h4> 
-	 <p id="anfragekontakt"> Test</p> 
-
-   </div>
-   <script>
+<script>
 	var anrede = $('input[name=anrede]:checked', '#buchungsanfrage').val()
 	var vorname = "x"
 	var name = "x"
@@ -190,9 +187,8 @@ $('#senden1').click(function() {
 	  
 	   
 	</script>
-         <footer class="footer">
-           <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker<a href="impressum.html">Impressum</a>
-        </div>
-        </footer>
-        </body>
+<footer class="footer">
+  <div class="container">© 2016 Copyright by Nadia Etter, Jenny Zisette und Mauro Walker<a href="impressum.html"> Impressum</a> </div>
+</footer>
+</body>
 </html>
